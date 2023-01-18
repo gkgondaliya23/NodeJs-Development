@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script async src="./js/index.js"></script>
+    <style>
+        .formDesign{
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header1">Login Page</h1>
+    <!-- <div >
+        <form name="form1">
+            Enter Name: <input type="text" name = "name" placeholder="Enter name" >
+            <input type="button" onclick="printVal()" value="Submit Now">
+        </form>
+    </div> -->
+
+    <!-- getElementById() -->
+    <!-- <div >
+        <form name="form2">
+            Enter Number: <input type="text" id = "num" placeholder="Enter number" >
+            <input type="button" onclick="printCube()" value="cube">
+        </form>
+    </div> -->
+
+     <!-- getElementsByName() -->
+    <!-- <div >
+        <form name="form3">
+            Male <input type="radio" name="Gender" value="Male"> 
+            Female <input type="radio" name="Gender" value="Female"> 
+
+            <input type="button" onclick="printGen()" value="select">
+        </form>
+    </div> -->
+
+    <!-- getElementsByTagName() -->
+    <!-- <div >
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, velit?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, velit?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, velit?</p>
+        <button onclick="countPara()">Counting</button>
+    </div> -->
+    
+    <!-- getElementsByClassName() -->
+    <!-- <div >
+        <p class="para">How r u??</p>
+        <p class="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, velit?</p>
+       <p class="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, velit?</p> 
+        <button onclick="Count()">Counting</button>
+    </div> -->
+    
+    <!-- Form validation -->
+    <div>
+        <form name="loginForm" onsubmit="return Validation()" >
+            <div class="formDesign" id="fname">
+                Name:<input type="text" name="fname" required><i><span class="formError" style="color:red"></span></i>
+            </div>
+            
+            <div class="formDesign" id="femail">
+                Email:<input type="text" name="femail" required><i><span class="formError" style="color:red"></span></i>
+            </div>
+            <div class="formDesign" id="fphone">
+                Phone:<input type="number" name="fphone" required><i><span class="formError" style="color:red"></span></i>
+            </div>
+            <div class="formDesign" id="password">
+                Password:<input type="password" name="password" required><i><span class="formError" style="color:red"></span></i>
+            </div>
+            <div class="formDesign" id="cPassword">
+               Re-Enter Password:<input type="password" name="cPassword" required><i><span class="formError" style="color:red"></span></i>
+            </div>
+            <input type="submit" value="Submit" onclick="Validation()">
+        </form>
+    </div>
+    <!-- <script src="js/index.js"></script> -->
+</body>
+</html>
