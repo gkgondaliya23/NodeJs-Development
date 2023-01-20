@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Loan Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col">
+            <div class="row">
+                <h1>Mortgage Loan Calculator</h1>
+                <div class="loanamt">
+                    <label for="">Loan Amount ($) : </label>
+                    <input type="text" id="screen1" class="input" >
+                </div>
+                <div class="intrest">
+                    <label for="">Intrest Rate (%) : </label>
+                    <input type="text" id="screen2" class="input" >
+                </div>
+                <div class="pay">
+                    <label for="">Months to Pay : </label>
+                    <input type="text" id="screen3" class="input" >
+                </div>
+                <div class="button">
+                    <button class="btn">
+                        Calculate
+                    </button>
+                </div>
+                <div>
+                    <p id="dis" class="out"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script async src="index.js"></script>
+
+</html>

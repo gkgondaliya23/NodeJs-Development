@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <div class="row">
+                <h1>Register form</h1>
+                <h3>Please Fill all Details Below:</h3>
+            </div>
+            <div class="row">
+                <form name="loginForm" >
+                    <div class="formDesign">
+                        <label for="name">Name: </label><input type="text" name="fname" id="fname" required><i><span class="fnameErr formError" style="color:red"></span></i>
+                    </div>
+                    
+                    <div class="formDesign" >
+                       <label for="email">Email: </label> <input type="text" name="femail" id="email" required><i><span class="formError emailErr" style="color:red"></span></i>
+                    </div>
+                    <div class="formDesign" >
+                       <label for="phone">Phone: </label> <input type="number" name="fphone" id="phone" required><i><span class="formError phoneErr" style="color:red"></span></i>
+                    </div>
+                    <div class="formDesign" >
+                       <label for="password">Password: </label> <input type="password" name="password" id="password" required><i><span class="formError passErr" style="color:red"></span></i>
+                    </div>
+                    <div class="formDesign" >
+                      <label for="cpassword">Confirm Password: </label> <input type="password" name="cPassword" id="cPassword" required><i><span class="formError cpassErr" style="color:red"></span></i>
+                    </div>
+                    <input type="submit" value="Submit" id="btn">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

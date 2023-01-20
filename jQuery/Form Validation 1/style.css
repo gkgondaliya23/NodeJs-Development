@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    margin:5px;
+    font-size: 35px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+.row{
+    display: flex;
+    flex-direction: column;
+    /* padding: 10px; */
+}
+.formDesign{
+    padding: 8px;
+}

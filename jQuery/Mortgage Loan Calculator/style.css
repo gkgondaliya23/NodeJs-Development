@@ -1,0 +1,65 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+h1{
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    margin: 5px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+}
+.col{
+    /* background: rgb(163, 163, 163); */
+    background: black;
+    border-radius: 30px;
+    padding:20px 10px;
+    height: 550px;
+    width: 450px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.input{
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 400px;
+    border: none;
+}
+.loanamt, .intrest, .pay{
+    padding: 15px;
+}
+label{
+    color: white;
+    font-size: 20px;
+    /* margin: 10px; */
+}
+.button{
+    margin: 20px;
+}
+.btn{
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    background: red;
+    color: white;
+    border: none;
+    margin: 10px;
+}
+.btn:hover{
+    background-color: white;
+    color: red;
+}
+.out{
+color: yellow;
+font-size: 30px;
+}
