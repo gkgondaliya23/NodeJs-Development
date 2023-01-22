@@ -34,6 +34,8 @@ insert into CLIENT_MASTER values ("C00006","dipak sharma","A-234 borivali","A-21
 select * from CLIENT_MASTER;
 
 ------------------------------------------------------------------------------------------------------------------------------
+--                                          Select Query
+------------------------------------------------------------------------------------------------------------------------------
 -- 1. set from specific column (Name)
 select NAME from CLIENT_MASTER;
 -- 2. All table view
