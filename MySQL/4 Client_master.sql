@@ -61,3 +61,34 @@ update CLIENT_MASTER set BALDUE=1000 where CLIENT_NO="C00001";
 update PRODUCT_MASTER set COSTPRICE=950 where DESCRIPTION="trousers";
 -- 4.
 update SALESMAN_MASTER set CITY="pune";
+
+
+---------------------------------------------------------------------------------------------------------------------------
+--                                           Delete Query
+---------------------------------------------------------------------------------------------------------------------------
+-- 1. CLIENT_MASTER
+delete from CLIENT_MASTER where CLIENT_NO="C00002";
+
+delete from CLIENT_MASTER where NAME="hansal colaco";
+
+delete from CLIENT_MASTER where PINCODE=560050;
+
+delete from CLIENT_MASTER;
+
+-- 2. PRODUCT_MASTER
+delete from PRODUCT_MASTER where PRODUCT_NO="p07868";
+
+delete from PRODUCT_MASTER where DESCRIPTION="skirts";
+
+delete from PRODUCT_MASTER where COSTPRICE=250;
+
+delete from PRODUCT_MASTER;
+
+-- 3. saleman_master
+ delete from SALESMAN_MASTER where ADDRESS1="a-5";
+
+ delete from SALESMAN_MASTER where ADDRESS2="bandra";
+
+delete from SALESMAN_MASTER where YTDSALES=50;
+
+delete from SALESMAN_MASTER;
