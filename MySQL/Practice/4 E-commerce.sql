@@ -32,9 +32,11 @@ create table orders
 (
     order_id int PRIMARY KEY,
     customer_id int,
+    product_id int,
     order_date Date,
     total_price int(10),
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
 -- create table order_items
@@ -45,7 +47,7 @@ create table order_items
     product_id int,
     quantity int,
     price int(10),
-    FOREIGN KEY (order_id) REFERENCES orders(order_id)
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
@@ -77,12 +79,12 @@ insert into order_items values (6,6,5,1,90000);
 
 
 -- insert data orders
-insert into orders values (1,1,"2023-01-20",1500);
-insert into orders values (2,1,"2023-01-26",15000);
-insert into orders values (3,3,"2023-01-27",6000);
-insert into orders values (4,3,"2023-01-27",15500);
-insert into orders values (5,4,"2023-01-29",7500);
-insert into orders values (6,5,"2023-01-30",7000);
+insert into orders values (1,1,1,"2023-01-20",50000);
+insert into orders values (2,1,2,"2023-01-26",15000);
+insert into orders values (3,3,2,"2023-01-27",7500);
+insert into orders values (4,3,3,"2023-01-29",3750);
+insert into orders values (5,4,3,"2023-01-29",7500);
+insert into orders values (6,5,5,"2023-01-30",90000);
 
 
 --4. retrieve all customers from the "customers" table
@@ -98,7 +100,11 @@ select * from orders;
 select * from oreder_item;
 
 -- 8. Use the JOIN statement to retrieve order details including customer information and product details
-SELECT orders.order_id, customers.first_name, products.product_name,orders.order_date FROM orders INNER JOIN customers ON orders.customer_id=customers.customer_id;
+SELECT orders.*, customers.*, products.*
+FROM orders
+inner join customers ON orders.customer_id = customers.customer_id
+inner join products ON orders.product_id = products.product_id;
+
 
 -- 9. update the product_quantity of a product with a specific product_id
 update products set product_quantity = 500 where product_id = 3;
@@ -107,6 +113,7 @@ update products set product_quantity = 500 where product_id = 3;
 delete from orders where order_id = 5;
 
 -- 11. retrieve all orders placed by a specific customer, using the customer's email.
-
+select * from customers c, orders o where c.customer_id = o.customer_id; 
 
 -- 12. retrieve all products in a specific category and sort them by price in ascending order
+select * from products where category = "Accessories" order by product_price;
