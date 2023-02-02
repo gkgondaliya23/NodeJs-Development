@@ -1,4 +1,4 @@
--- Customers Table
+-- Student Management System
 -- \sql
 -- \connect root@localhost:3306
 

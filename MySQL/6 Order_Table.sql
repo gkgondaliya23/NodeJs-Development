@@ -100,6 +100,7 @@ insert into PRODUCT_MASTER values ("P07885","Pull Overs",2.5,"Piece",80,30,700,4
 insert into PRODUCT_MASTER values ("P07965","Denim Shirts",4,"Piece",100,40,350,250);
 insert into PRODUCT_MASTER values ("P07975","Lycra Tops",5,"Piece",70,30,300,175);
 insert into PRODUCT_MASTER values ("P08865","Skirts",5,"Piece",75,30,450,300);
+insert into PRODUCT_MASTER values ("P03453","Hoddies",5,"Piece",175,30,550,300);
 
 -- insert data in salesman table
 insert into SALESMAN_MASTER values ("S00001","Aman","A/14","Worli","Mumbai",400002,"Maharashtra",3000,100,50,"Good");
@@ -123,7 +124,7 @@ insert into SALES_ORDER_DETAILS values ("O19002","P00001",10,0,525);
 insert into SALES_ORDER_DETAILS values ("O46865","P07868",3,3,3150);
 insert into SALES_ORDER_DETAILS values ("O46865","P07885",3,1,5250);
 insert into SALES_ORDER_DETAILS values ("O46865","P00001",10,10,525);
-insert into SALES_ORDER_DETAILS values ("O46865","P03450",4,4,1050);
+insert into SALES_ORDER_DETAILS values ("O46865","P0345",4,4,1050);
 insert into SALES_ORDER_DETAILS values ("O19003","P03453",2,2,1050);
 insert into SALES_ORDER_DETAILS values ("O19003","P06734",1,1,12000);
 insert into SALES_ORDER_DETAILS values ("O46866","P07965",1,0,8400);
