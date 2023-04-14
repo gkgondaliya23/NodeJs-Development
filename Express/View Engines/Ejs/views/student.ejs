@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Student details</h1>
+    Student id : <%=studentId%> <br>
+        Student name : <%=studentName%> <br>
+            Student marks : <%=studentMarks%> <br>
+
+                Result :
+                <% if(studentMarks>=35){%>
+                    Pass
+                    <%}else{%>
+                        Fail
+                        <%}%>
+                            <%for(var i=0; i<subjects.length;i++){%>
+                                <li>
+                                    <%=subjects[i].name%> : <%=subjects[i].marks%>
+                                </li>
+                                <%}%>
+</body>
+
+</html>
