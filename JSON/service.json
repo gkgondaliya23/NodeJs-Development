@@ -1,0 +1,68 @@
+  {
+    "orderno": [
+    {
+        "id":"1",
+        "ordernum":"#4464"
+    }
+    ],
+    "restaurant":[
+      {
+        "id":"1",
+        "restaurantname":"Mcdonalds",
+        "restaurantadd":"1097 silver hub jakatnaka surat 36655",
+        "rating":"4.5 Out of 5"
+      }
+    ],
+    "item":[
+      {
+        "id":"1",
+        "item1":"Coffee",
+        "qty":"2"
+      },
+      {
+        "item2":"Mcsaver",
+        "qty":"1"
+      }
+    ],
+    "customer":[
+      {
+        "id":"1",
+        "firstname":"John",
+        "lastname":"Nhoj"
+    },
+    {
+      "address1":"2001",
+      "address2":"River view",
+      "state":"Gujarat",
+      "city":"Surat",
+      "Pincode":"395006"
+    }
+  ],
+  "contactdetail":[
+    {
+      "id":"1",
+      "number":"4473467913",
+      "Email":"abc@abc.com",
+      "newsletter":true
+    }
+  ],
+  "paymentopt":[
+    {
+      "id":"1",
+      "paymentopt":"cash on delvery"
+    }
+  ],
+  "deilvery":[
+    {
+      "id":"1",
+      "deliveryboy":"Ramukaka",
+      "boynum":"446445864",
+      "rating":"4 Out of 5"
+    }
+  ],
+  "orderconfirmed":[
+    {
+      "orderconfirmed":true
+    }
+  ]
+}

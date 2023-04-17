@@ -1,0 +1,26 @@
+{
+    "name":[
+        {"id":"1","fname":"Gautam"},
+        {"id":"2","lname":"ramani"},
+        {"id":"3","lname":"k."}
+    ],
+    "age_city_state":[
+        {"id":"1","age":"22"},
+        {"id":"2","city":"surat"},
+        {"id":"3","state":"gujarat"}
+    ],
+    "education":[
+        {"id":"1","scholling":"nalanda"},
+        {"id":"2","diploma":"tapi"},
+        {"id":"3","college":"ssasit"}
+    ],
+    "goal":[
+        {"id":"1","sturm":"get job"},
+        {"id":"2","lturm":"senior position"}
+    ],
+    "hobby":[
+        {"id":"1","hobby":"Cricket"},
+        {"id":"2","hobby":"music"},
+        {"id":"3","hobby":"vallyball"}
+    ]
+}

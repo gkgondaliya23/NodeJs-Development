@@ -1,0 +1,54 @@
+db.task1.insertOne({
+    sno:101,
+    sname:"Ram",
+    fees:37500,
+    course:"Node"
+})
+db.task1.insertOne({
+    sno:102,
+    sname:"Raj",
+    fees:45000,
+    course:"FullStack"
+})
+db.task1.insertOne({
+    sno:103,
+    sname:"a",
+    fees:65000,
+    course:"Django"
+})
+db.task1.insertOne({
+    sno:104,
+    sname:"b",
+    fees:45000,
+    course:"Node"
+})
+db.task1.insertOne({
+    sno:105,
+    sname:"c",
+    fees:65000,
+    course:"Flutter"
+})
+db.task1.insertOne({
+    sno:106,
+sname:"d",
+fees:25000,
+course:"Python"
+})
+db.task1.insertOne({
+    sno:107,
+    sname:"d",
+    fees:25000,
+    course:"C++"
+})
+db.task1.insertOne({
+    sno:108,
+    sname:"d",
+    fees:25000,
+    course:"C"
+})
+db.task1.insertOne({
+    sno:109,
+    sname:"d",
+    fees:25000,
+    course:"Data Structure"
+})

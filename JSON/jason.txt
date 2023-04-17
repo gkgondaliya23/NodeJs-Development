@@ -1,0 +1,24 @@
+JSON:-
+
+    json stands for JavaScript Object Notation
+
+    The JSON object contains methods for parsing JavaScript Object Notation (JSON) and converting values to JSON.
+    It can't be called or constructed, and aside from its two method properties, it has no interesting functionality of its own.
+
+    JavaScript and JSON differences:-
+
+    JSON is a syntax for serializing objects, arrays, numbers, strings, booleans, and null. It is based upon JavaScript syntax but is distinct from it: some JavaScript is not JSON.
+
+    advantages:-
+
+        Provide support for all browsers
+        Easy to read and write
+        Straightforward syntax
+        You can natively parse in JavaScript using eval() function
+        Easy to create and manipulate
+        Supported by all major JavaScript frameworks
+        Supported by most backend technologies
+        JSON is recognized natively by JavaScript
+        It allows you to transmit and serialize structured data using a network connection.
+        You can use it with modern programming languages.
+        JSON is text which can be converted to any object of JavaScript into JSON and send this JSON to the server.
