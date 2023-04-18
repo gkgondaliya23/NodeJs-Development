@@ -1,0 +1,46 @@
+[
+    {
+        "shopname":"m2m",
+        "offer":"50%",
+        "address":[
+            {
+                "address1":"B-103 mahaveer complex,ghoddod road, minibajar surat"
+            },
+            {
+                "address2":"56 radhe complex, udhna magdalla station road"
+            }
+        ],        
+        "contact":{
+            "contact1":
+            {
+                "contact1":"7876468647"
+            },
+            "contact2":
+            {
+                "contact2":"7876468677"
+            }
+        }
+    },
+    {
+        "shopname":"big bajar",
+        "offer":"20%",
+        "address":[
+            {
+                "address1":"B-103 mahaveer complex,ghoddod road, minibajar surat"
+            },
+            {
+                "address2":"56 radhe complex, udhna magdalla station road"
+            }
+        ],        
+        "contact":{
+            "contact1":
+            {
+                "contact1":"7876468647"
+            },
+            "contact2":
+            {
+                "contact2":"7876468677"
+            }
+        }
+    }
+]

@@ -1,0 +1,125 @@
+[
+    {
+      "title": "Linux in simple way",
+      "isbn": 6677,
+      "downloadable": false,
+      "no_of_reviews": 1,
+      "tags": ["os", "freeware", "shell programming"],
+  
+      "languages": ["english", "hindi", "gujarati"],
+      "author": {
+        "name": "Shiva Ramachandran",
+        "callname": "Shiv",
+        "profile": {
+          "exp": 8,
+          "courses": 3,
+          "books": 2
+        }
+      }
+    },
+    {
+      "title": "Java in simple way",
+      "isbn": 1122,
+      "downloadable": true,
+      "no_of_reviews": 2,
+      "tags": ["language", "freeware", "programming"],
+      "languages": ["english", "hindi", "gujarati"],
+      "author": {
+        "name": "Karhik Ramachandran",
+        "callname": "Karthik",
+        "profile": {
+          "exp": 1,
+          "courses": 2,
+          "books": 3
+        }
+      }
+    },
+    {
+      "title": "Python in simple way",
+      "isbn": 1234,
+      "downloadable": false,
+      "no_of_reviews": 5,
+  
+      "tags": ["language", "freeware", "programming"],
+      "languages": ["english", "hindi", "gujarati"],
+      "author": {
+        "name": "Daniel IA Cohen",
+        "callname": "Dan",
+        "profile": {
+          "exp": 8,
+          "courses": 7,
+          "books": 6
+        }
+      }
+    },
+    {
+      "title": "Devops in simple way",
+      "isbn": 6677,
+      "downloadable": false,
+      "no_of_reviews": 3,
+      "tags": ["jenkins", "git", "cicd"],
+      "languages": ["english", "hindi", "gujarati"],
+      "author": {
+        "name": "Dhoni Chandra",
+        "callname": "Dhoni",
+        "profile": {
+          "exp": 4,
+          "courses": 4,
+          "books": 4
+        }
+      }
+    },
+    {
+      "title": "MongoDB in simple way",
+      "isbn": 6677,
+      "downloadable": true,
+  
+      "no_of_reviews": 4,
+      "tags": ["database", "cloud", "nosql"],
+      "languages": ["english", "hindi", "gujarati"],
+      "author": {
+        "name": "Sachin Tendulkar",
+        "callname": "Sachin",
+        "profile": {
+          "exp": 6,
+          "courses": 7,
+          "books": 8
+        }
+      }
+    },
+    {
+      "title": "Oracle in simple way",
+      "isbn": 6677,
+      "downloadable": true,
+      "no_of_reviews": 3,
+      "tags": ["database", "sql", "relational"],
+      "languages": ["english", "hindi", "gujarati"],
+      "author": {
+        "name": "Virat Kohli",
+        "callname": "kohli",
+        "profile": {
+          "exp": 2,
+          "courses": 2,
+          "books": 2
+        }
+      }
+    },
+    {
+      "title": "Shell Scripting in simple way",
+      "isbn": 9988,
+  
+      "downloadable": true,
+      "no_of_reviews": 1,
+      "tags": ["programming"],
+      "languages": ["english", "hindi", "tamil"],
+      "author": {
+        "name": "Rama Ramachandran",
+        "callname": "Rama",
+        "profile": {
+          "exp": 8,
+          "courses": 3,
+          "books": 2
+        }
+      }
+    }
+  ]

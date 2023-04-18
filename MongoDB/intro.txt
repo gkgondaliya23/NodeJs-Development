@@ -1,0 +1,466 @@
+Database:-
+
+    A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.
+
+MongoDB:
+MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. MongoDB is developed by MongoDB Inc. 
+
+Differences between MongoDB and MySQL:
+ 
+MongoDB is a document-based non-relational database management system. It’s also called an object-based system. It was designed to supplant the MySQL structure as an easier way to work with data. 
+
+On the other hand, MySQL is a table-based system (or open-source relational database). The table-based design is the data query structure for search and is considered an SQL database. Also, data is searchable and accessible in relation to another data point or set.
+
+MongoDB --> nosql , document ,non relational dbms
+        -->cassandra,hbase
+sql -> RDMS relational database management system
+
+MongoDB Structure:
+------------------
+-> MongoDB Physical database contains several logical databases.
+-> Each database contains several collections. Collection is something
+    like table in relational database.
+-> Each collection contains several documents. Document is something
+like record/row in relational database.
+
+
+SQL Terms 		MongoDB Terms
+-----------------------------------------------------------------------
+Database 		Database
+Table 			Collection
+Entity/Row 		Document
+Column 			Key / Field
+Table Join 		Embedded Documents
+Primary Key 	        Primary Key (Default key _id provided by mongodb itself)
+
+Key Characteristics of MongoDB database:
+----------------------------------------
+1. Installation and setup is very easy.
+2. All information related to a document will be stored in a single place.
+ To retrieve data, it is not required to perform join operations and
+hence retrieval is very fast.
+3. Documents are independent of each other and no schema. Hence
+we can store unstructured data like videos, audio files etc
+4. We can perform oprations like editing existing document, deleting
+document and inserting new documents very easily.
+5. Retrieval data is in the form of json which can be understandable by
+any programming language without any conversion (interoperability)
+6. We can store very huge amount of data and hence scalability is
+more
+
+MongoDB Shell vs MongoDB Server:
+--------------------------------
+Once we installed MongoDB, we will get MongoDB Shell and MongoDB
+Server . These are Javascript based applications.
+
+MongoDB Server is responsible to store our data in database. --> mongod
+MongoDB Shell is responsible to manage Server.               --> mongo   
+
+
+mongod --dbpath "C:\data\db"
+
+
+Default Databases:
+------------------
+MongoDB Admin will use these default databases.
+> show dbs
+admin 0.000GB
+config 0.000GB
+local 0.000GB
+1. admin:
+---------
+admin database is used to store user authentication and authorization
+information like usernames,passwords,roles etc
+This database is used by administrators while creating,deleting and
+updating users and while assigning roles.
+
+2. config:
+----------
+To store configuration information of mongodb server.
+
+3. local:
+---------
+local database can be used by admin while performing replication
+process.
+
+db.version()
+db.help()
+db.showdbs
+use admin()
+
+********************************************
+create collection:-
+open cmd type:- mongod
+another cmd open type:-mongo
+
+use newskill
+db.createCollection("test")
+db.test.insertOne({
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  })
+
+  db.test.find()
+  db.test.find().pretty()
+
+************************************
+With insertOne you can insert one document into the collection. 
+insertMany accepts an array of documents and these are inserted. 
+The insert (the method from older versions) takes a single document by default, and there is an option to insert multiple documents supplied as an array.
+
+*************************************
+use newskill
+db.createCollection("service")
+db.service.insertOne(
+  {
+    "orderno": [
+    {
+        "id":"1",
+        "ordernum":"#4464"
+    }
+    ],
+    "restaurant":[
+      {
+        "id":"1",
+        "restaurantname":"Mcdonalds",
+        "restaurantadd":"1097 silver hub jakatnaka surat 36655",
+        "rating":"4.5 Out of 5"
+      }
+    ],
+    "item":[
+      {
+        "id":"1",
+        "item1":"Coffee",
+        "qty":"2"
+      },
+      {
+        "item2":"Mcsaver",
+        "qty":"1"
+      }
+    ],
+    "customer":[
+      {
+        "id":"1",
+        "firstname":"John",
+        "lastname":"Nhoj"
+    },
+    {
+      "address1":"2001",
+      "address2":"River view",
+      "state":"Gujarat",
+      "city":"Surat",
+      "Pincode":"395006"
+    }
+  ],
+  "contactdetail":[
+    {
+      "id":"1",
+      "number":"4473467913",
+      "Email":"abc@abc.com",
+      "newsletter":true
+    }
+  ],
+  "paymentopt":[
+    {
+      "id":"1",
+      "paymentopt":"cash on delvery"
+    }
+  ],
+  "deilvery":[
+    {
+      "id":"1",
+      "deliveryboy":"Ramukaka",
+      "boynum":"446445864",
+      "rating":"4 Out of 5"
+    }
+  ],
+  "orderconfirmed":[
+    {
+      "orderconfirmed":true
+    }
+  ]
+})
+db.service.find()
+db.service.find().pretty()
+
+*****************************************************
+task:-make a data based on service(minimum five) and also particular service have minimum five data
+
+use newskill 
+createCollection("services")
+db.services.insertMany(
+  [
+    {
+      service-1
+      data
+    },
+    {
+      service-2
+      data
+    },
+    {
+      service-3
+      data
+    },
+    {
+      service-4
+      data
+    },
+    {
+      service-5
+      data
+    }
+  ]
+)
+db.services.find().pretty()
+
+*****************************************
+
+skip():-
+Sometimes it is required to return a certain number of results after a certain number of documents. The skip() can do this job.
+
+limit():-
+The limit() function in MongoDB is used to specify the maximum number of results to be returned. Only one parameter is required for this function.to return the number of the desired result.
+
+count:-The count() function returns the number of documents in a specified collection.
+
+sort:- sort({"":1}) ---make in Assending order
+       sort({"":-1})  ---make in desending order
+
+***********************************************
+
+task:-make a 9 data(ex.) 
+      a.show only 4,5 and 6 number data
+      b.show 2nd number data only
+      b.show 2nd last number data only
+
+use task1
+db.createCollection("task1")
+db.task1.insertOne({sno:101,sname:"Ram",fees:37500,course:"Node"})
+db.task1.insertOne({sno:102,sname:"Raj",fees:45000,course:"FullStack"})
+db.task1.insertOne({sno:103,sname:"a",fees:65000,course:"Django"})
+db.task1.insertOne({sno:104,sname:"b",fees:45000,course:"Node"})
+db.task1.insertOne({sno:105,sname:"c",fees:65000,course:"Flutter"})
+db.task1.insertOne({sno:106,sname:"d",fees:25000,course:"Python"})
+db.task1.insertOne({sno:107,sname:"d",fees:25000,course:"C++"})
+db.task1.insertOne({sno:108,sname:"d",fees:25000,course:"C"})
+db.task1.insertOne({sno:109,sname:"d",fees:25000,course:"Data Structure"})
+db.task1.find().pretty()           
+db.task1.find().skip(3).limit(3)        //a                 
+db.task1.find().skip(1).limit(1)        //b        
+db.task1.find().skip(7).limit(1)        //c       
+
+*******************Embedded data(nested form)**********************
+source:- Json placeholder/user
+
+[
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ervin Howell",
+    "username": "Antonette",
+    "email": "Shanna@melissa.tv",
+    "address": {
+      "street": "Victor Plains",
+      "suite": "Suite 879",
+      "city": "Wisokyburgh",
+      "zipcode": "90566-7771",
+      "geo": {
+        "lat": "-43.9509",
+        "lng": "-34.4618"
+      }
+    },
+    "phone": "010-692-6593 x09125",
+    "website": "anastasia.net",
+    "company": {
+      "name": "Deckow-Crist",
+      "catchPhrase": "Proactive didactic contingency",
+      "bs": "synergize scalable supply-chains"
+    }
+  }
+]
+
+
+https://www.mongodb.com/try/download/database-tools
+downolad above tool, open it go for mongodb database->bin->mongoimport.exe(copy) 
+paste go for Program Files->MongoDb->Server->5.0->bin->(paste)
+
+**********************Steps for js File Import in MongoDB********************8
+->Make a js file(vs code)
+->open cmd type mongod,open cmd where js file is locate type mongo
+->show dbs->open folder(make collection before load the file)  where you want to load the file
+->load("filename.js")->true
+->db.filename.find()
+
+********************Steps for Json File Import in MongoDB*************
+->Make a json file(vs code)
+->open cmd type mongod,open cmd where json file is locate  type mongoimport --db databaseName --collection collectionName --file fileName --jsonArray
+->type mongo
+
+example:-mongoimport --db book --collection taskbook --file book.json --jsonArray
+show dbs->use book->db.taskbook.find().pretty()
+
+*******************************
+
+drop():-drop() method is used to drop a collection from a database.
+dropDatabase():-Removes the current database, deleting the associated data files.
+
+ex:-
+
+use datastructure
+db.createCollection("topics")
+db.topics.insertOne({"t1":"shorting","t2":"linklist","t3":"tree"})
+db.topics.drop()
+db.dropDatabase()
+
+ObjectId:
+For every document, MongoDB Server will associate a unique id, which
+is nothing but ObjectId.
+db.collection.find()[0]._id
+
+Populate:-
+Populate in Mongoose is used to enhance one-to-many or many-to-one data relationships in MongoDB. The populate () method allows developers to simply refer to a document inside a different collection to another document’s field that resides in a different field. It lets you set the field’s value as the actual document that you are referring to.
+
+1. Comparison Query Operators:
+$eq:-equal, $ne:-not equal, $gt:-greter than, $gte:-greter than equal, $lt:-less than, $lte:-less than equal, $in:-in, $nin:-not in
+
+ex:
+note:-json object already imported into database
+show dbs
+use taskbook
+show collections
+db.taskbook.find().pretty()
+db.taskbook.find({ no_of_reviews: { $eq: 3}}).pretty()           
+              or
+db.taskbook.find({ no_of_reviews: 3}).pretty()
+
+db.taskbook.find({"author.profile.courses": {$eq: 2}}).pretty()
+                    or
+db.taskbook.find({"author.profile.courses": 2}).pretty()
+
+db.taskbook.find({tags: {$eq: "database"}}).pretty()
+                    or
+db.taskbook.find({tags: "database"}).pretty()
+
+db.taskbook.find({tags: {$eq:["language","freeware","programming"]}}).pretty()
+                    or
+db.taskbook.find({tags: ["language","freeware","programming"]}).pretty()
+
+db.taskbook.find({no_of_reviews: {$ne: 3}}).pretty()
+
+db.taskbook.find({no_of_reviews: {$gt: 3}}).pretty()
+
+db.taskbook.find({no_of_reviews: {$gte: 3}}).pretty()
+
+db.taskbook.find({taskno_of_reviews: {$lt: 3}}).pretty()
+
+db.taskbook.find({no_of_reviews: {$lte: 3}}).pretty()
+
+db.taskbook.find({no_of_reviews: {$in: [1,4,5]}}).pretty()
+
+db.taskbook.find()[6].languages
+
+db.taskbook.find()[6].languages[1]
+
+db.taskbook.find()[6].author.profile.courses
+
+2.Logical Query Operators:
+------------------------
+$or, $nor, $and, $not
+
+			    or	nor	and	nand 
+	0	0	    0	  1	  0	  1	  
+	0	1	    1	  0	  0	  1
+	1	0	    1	  0	  0	  1
+	1	1	    1	  0	  1	  0
+  not:- 0->1
+        1->0
+
+$or operator:
+
+  Syntax: {$or: [{expression1},{expression1},..{expressionN}]}
+  db.books.find({$or: [{no_of_reviews: {$gt: 3}}, {tags: "programming"}]}).pretty()
+  db.books.find({$or: [{no_of_reviews: {$gt: 3}}, {tags: "programming"}]}).pretty().count()
+  o/p=4
+  db.books.find({$or: [{no_of_reviews: {$lt: 3}}, {downloadable: true},{"author.profile.books": {$gte: 2}}]}).pretty()
+
+$nor operator:It is inverse of $or operator:
+
+  Syntax: {$nor: [{expression1},{expression1},..{expressionN}]}
+  db.taskbook.find({$nor: [{no_of_reviews: {$gt: 3}}, {tags: "programming"}]}).pretty()
+  db.taskbook.find({$nor: [{no_of_reviews: {$gt: 3}}, {tags: "programming"}]}).pretty().count()
+  o/p=3
+
+$and operator:
+
+  db.taskbook.find({$and:[{"downloadable":true},{"author.profile.books":2}]}).pretty()
+  db.taskbook.find({$and:[{"downloadable":true},{"author.profile.books":2}]}).pretty().count()
+
+nand operator:
+
+  db.taskbook.find({$or:[{"downloadable":{$ne:true}},{"author.profile.books":{$ne:2}}]}).pretty().count()
+
+not operator:
+
+  db.taskbook.find({"isbn":{$not:{$eq:9988}}}).pretty()
+  db.taskbook.find({"isbn":{$not:{$eq:9988}}}).pretty().count()
+
+update(),updateOne(),save():-MongoDB's update() and save() methods are used to update document into a collection.
+db.taskbook.update({"isbn":9988},{$set:{"author.callname":"Ramcharit"}})
+
+updateMany():-The updateMany() method updates all the documents that matches the given filter.
+db.taskbook.updateMany({"downloadable":true},{$set:{"downloadable":"yes"}})
+
+remove(),deleteOne():-MongoDB's remove() method is used to remove a document from the collection. remove() method accepts two parameters. One is deletion criteria and second is justOne flag.
+db.taskbook.remove({"isbn":9988})
+db.taskbook.remove({})     //whole order's will delete
+db.taskbook.remove({"isbn":6677})    //4 record will delete
+db.taskbook.deleteMany({"isbn":6677})  //4 record will delete
+
+MongoDB Shell:- MongoDB have a JavaScript shell that allows interaction with MongoDB instance from the command line. you can create a document as well as  table, you should name the table and define its column and each column's data type. 
+
+MongoDB Compass:- MongoDB Compass is a powerful GUI for querying, aggregating, and analyzing your MongoDB data in a visual environment. Compass is free to use and source available, and can be run on macOS, Windows, and Linux.(GUI:Graphical user interface)
+
+MongoDB Atlas:- MongoDB Atlas is a multi-cloud database service by the same people that build MongoDB. Atlas simplifies deploying and managing your databases while offering the versatility you need to build resilient and performant global applications on the cloud providers of your choice.
+
+->it also connect with MongoDB Shell, application, and MongoDB Compass.
+
+gk:-
+
+CRUD operations:-Create-Read-Update-Delete
+
+WEB Api vs Application:-
+ 
+Web API is back-end application(server side) where actual functionality to call service/database call is happening to store and retrieve the data.
+
+Web Application is front end application(client side)which is calling web API to present the data retrieved from back-end.
+
+eg: To check the account balance in your mobile banking app, you are able to see your account details in front end. But all the calculations of interest /balance is happening in the back end.
+
