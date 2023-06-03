@@ -1,0 +1,25 @@
+[{
+  "name": "Girish",
+  "age": 32,
+  "gender": "male",
+  "qualification": "B.ed",
+  "nationality": "Indian"
+},{
+  "name": "Komal",
+  "age": 33,
+  "gender": "female",
+  "qualification": "B.com",
+  "nationality": "Indian"
+},{
+  "name": "Mantra",
+  "age": 8,
+  "gender": "male",
+  "qualification": "3 pass",
+  "nationality": "Indian"
+},{
+  "name": "Swara",
+  "age": 2,
+  "gender": "female",
+  "qualification": "no",
+  "nationality": "Indian"
+}]

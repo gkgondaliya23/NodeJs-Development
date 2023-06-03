@@ -1,0 +1,97 @@
+// create database
+use students
+
+// create collection
+db.createCollection("Student")
+
+//insert one document 
+db.Student.insertOne({"name":"Komal","age":33,"gender":"female","qualification":"B.com"});
+
+//insert many document
+db.Student.insertMany([{
+    "name":"Mantra",
+    "age": 8,
+    "gender": "male",
+    "qualification": "3 pass"
+},{
+    "name":"Swara",
+    "age":2,
+    "gender":"female",
+    "qualification":"no"
+}])
+
+
+// show all document
+db.Student.find()
+
+// show specific document
+db.Student.findOne({"name":'Swara'})
+
+
+// show specific data only in document using projection 
+db.Student.find({},{_id:0,name:1})
+
+
+// update data in one document
+db.Student.updateOne({name:"GIrish"},{$set:{"name":"Girish"}})
+
+// update data in many documents
+db.Student.updateMany({},{$set:{"nationality":"Indian"}},{upsert:true})
+
+//delete one document
+db.Student.deleteOne({key: field})
+
+//delete many document
+db.Student.deleteMany({key: field})
+
+
+=> Comparison operator
+The following operators can be used in queries to compare values:
+
+$eq: Values are equal
+$ne: Values are not equal
+$gt: Value is greater than another value
+$gte: Value is greater than or equal to another value
+$lt: Value is less than another value
+$lte: Value is less than or equal to another value
+$in: Value is matched within an array
+
+
+=> Logical operator
+The following operators can logically compare multiple queries.
+
+$and: Returns documents where both queries match
+$or: Returns documents where either query matches
+$nor: Returns documents where both queries fail to match
+$not: Returns documents where the query does not match
+
+
+=> Evaluation operator
+The following operators assist in evaluating documents.
+
+$regex: Allows the use of regular expressions when evaluating field values
+$text: Performs a text search
+$where: Uses a JavaScript expression to match documents
+
+
+=> MongoDB Update Operators
+There are many update operators that can be used during document updates.
+
+=> Fields
+The following operators can be used to update fields:
+
+$currentDate: Sets the field value to the current date
+$inc: Increments the field value
+$rename: Renames the field
+$set: Sets the value of a field
+$unset: Removes the field from the document
+
+
+=> Array
+The following operators assist with updating arrays.
+
+$addToSet: Adds distinct elements to an array
+$pop: Removes the first or last element of an array
+$pull: Removes all elements from an array that match the query
+$push: Adds an element to an array
+

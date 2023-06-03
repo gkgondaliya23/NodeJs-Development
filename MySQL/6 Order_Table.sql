@@ -131,3 +131,41 @@ insert into SALES_ORDER_DETAILS values ("O46866","P07965",1,0,8400);
 insert into SALES_ORDER_DETAILS values ("O46866","P07975",1,0,1050);
 insert into SALES_ORDER_DETAILS values ("O19008","P00001",10,5,525);
 insert into SALES_ORDER_DETAILS values ("O19008","P07975",5,3,1050);
+
+
+-- retieve data from all tables
+select * from CLIENT_MASTER;
+select * from PRODUCT_MASTER;
+select * from SALESMAN_MASTER;
+select * from SALES_ORDER;
+select * from SALES_ORDER_DETAILS;
+
+
+-- Group by query
+select PRODUCT_NO,count(ORDER_NO) from SALES_ORDER_DETAILS Group by product_no order by product_no desc;
+select SALESMAN_NO, count(ORDER_NO) from SALES_ORDER Group by SALESMAN_NO order by SALESMAN_NO ;
+
+-- Having Cluses
+select PRODUCT_NO,count(ORDER_NO) from SALES_ORDER_DETAILS Group by product_no having count(ORDER_NO)<2;
+
+-- join query
+select CLIENT_MASTER.name, PRODUCT_MASTER.DESCRIPTION,SALES_ORDER.ORDER_NO  from SALES_ORDER_DETAILS 
+inner join SALES_ORDER on SALES_ORDER_DETAILS.ORDER_NO = SALES_ORDER.ORDER_NO
+inner join CLIENT_MASTER on SALES_ORDER.CLIENT_NO = CLIENT_MASTER.CLIENT_NO
+inner join PRODUCT_MASTER on SALES_ORDER_DETAILS.PRODUCT_NO = PRODUCT_MASTER.PRODUCT_NO;
+
+-- inner join
+select CLIENT_MASTER.name from SALES_ORDER
+inner join CLIENT_MASTER on SALES_ORDER.CLIENT_NO = CLIENT_MASTER.CLIENT_NO;
+
+-- left join
+select PRODUCT_MASTER.*, SALES_ORDER_DETAILS.ORDER_NO from SALES_ORDER_DETAILS
+left outer join product_master on SALES_ORDER_DETAILS.product_no = product_master.product_no;
+
+-- Right join
+select PRODUCT_MASTER.DESCRIPTION, SALES_ORDER_DETAILS.ORDER_NO from SALES_ORDER_DETAILS
+Right outer join product_master on SALES_ORDER_DETAILS.product_no = product_master.product_no;
+
+-- Full join
+select CLIENT_MASTER.*, SALES_ORDER.* from SALES_ORDER
+inner join CLIENT_MASTER on SALES_ORDER.CLIENT_NO = CLIENT_MASTER.client_no;
