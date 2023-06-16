@@ -1,5 +1,5 @@
 const express = require('express');
-const {createProduct, getAllProduct, getProduct} = require('../controllers/productController.js');
+const {createProduct, getAllProduct, getProduct, updateProduct, deleteProduct} = require('../controllers/productController.js');
 const productRoutes = express.Router();
 
 /**
@@ -17,6 +17,30 @@ productRoutes.post('/', createProduct);
 * @access: public 
 **/
 productRoutes.get('/', getAllProduct);
+
+/**
+* @url : http://localhost:8000/products/:id
+* @method: GET 
+* @param: product_id
+* @access: public 
+**/
+productRoutes.get('/:id', getProduct);
+
+/**
+* @url : http://localhost:8000/products/:id
+* @method: PUT 
+* @param: product_id
+* @access: private 
+**/
+productRoutes.put('/:id', updateProduct);
+
+/**
+* @url : http://localhost:8000/products/:id
+* @method: DELETE 
+* @param: product_id
+* @access: private 
+**/
+productRoutes.delete('/:id', deleteProduct);
 
 
 module.exports = productRoutes;
