@@ -45,20 +45,39 @@ exports.loginUser = async(req,res)=>{
     res.json({token});
 };
 
-exports.getUser = async(req, res)=>{
-    const id = req.params.id;
-    const user = await User.findById(id);
-    res.json({user});
+exports.getUser = async (req, res) => {
+    const user = await User.findById(req.user._id).select('-password');
+    res.json({ user });
 }
 
-exports.updateUser = async(req, res)=>{
-    const id = req.params.id;
-    const user = await User.findById(id);
+exports.changeUserPassword = async (req, res) => {
+    try {
+        const user = await User.findById(req.user._id);
+        const { password } = req.body;
+        if (!user) {
+            return res.status(400).json({ message: 'User not found' });
+        } else {
+            const salt = await bcrypt.genSalt(10);
+            const newHashPassword = await bcrypt.hash(password, salt);
 
-    if(!user)
-        return res.status(400).json({message: 'User not found'})
-    
-    const updateuser = await User.findByIdAndUpdate(id,req.body,{new:true});
+            const newPassword = await User.findByIdAndUpdate(user._id, { $set: { password: newHashPassword } }, { new: true });
+            newPassword.save();
+            res.status(200).json({ message: 'Password updated' });
+        }
+    } catch (error) {
+        console.log(error);
+        res.json({ message: 'failed to change password' });
+    }
+}
+
+exports.updateUser = async (req, res) => {
+
+    const user = await User.findById(req.user._id);
+
+    if (!user)
+        return res.status(400).json({ message: 'User not found' })
+
+    const updateuser = await User.findByIdAndUpdate(user._id, req.body, { new: true });
     updateuser.save();
     res.status(200).json(updateuser);
 }

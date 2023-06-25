@@ -1,6 +1,6 @@
 const express = require('express');
 const {registerUser, loginUser, getUser, updateUser} = require('../controller/userController');
-const {verifyToken, verifyTokenAuth} = require('../middleware/auth');
+const verifyToken = require('../middleware/auth');
 
 const userRoutes = express.Router();
 
@@ -9,8 +9,10 @@ userRoutes.post('/register', registerUser);
 
 userRoutes.post('/login', loginUser);
 
-userRoutes.get('/:id',verifyToken, getUser);
+userRoutes.get('/me',verifyToken, getUser);
 
-userRoutes.put('/:id',verifyToken, updateUser);
+userRoutes.put('/me',verifyToken, updateUser);
+
+userRoutes.post('/change-password',verifyToken, changeUserPassword);
 
 module.exports = userRoutes;
